@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %title ToDo List
+    %script{ type: 'text/javascript', src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js' }
+    %script{ type: 'text/javascript', src: '/materialize.min.js'}
+    %script{ type: 'text/javascript', src: '/layout.js'}
+    %link{ :rel => "stylesheet", :href =>"/css/materialize.css" }
+    %link{ :rel => "stylesheet", :href =>"/css/style.css" }
+  %body
+    %header#header--layout
+      / ドロップダウン 子メニュー
+      %ul#dropdown1.dropdown-content
+        %li
+          %a{:href => "#"} dropdownメニュー01
+        %li
+          %a{:href => "#"} dropdownメニュー02
+        %li.divider
+        %li
+          %a{:href => "#"} dropdownメニュー03
+      / ナビゲーション
+      %nav
+        .nav-wrapper.teal.lighten-3
+          %a.brand-logo{:href => "/"}>
+            %img{:alt => "Liruu design", :src => "/logo.png"}/
+          / ロゴ
+          %ul#nav-mobile.right.side-nav
+            %li
+              %a.dropdown-button{"data-target" => "dropdown1", :href => "#!"}
+                dropdownメニュー
+                %i.mdi-navigation-arrow-drop-down.right
+            %li
+              %a{:href => "#"} メニュー01
+            %li
+              %a{:href => "#"} メニュー02
+            %li
+              %a{:href => "#"} メニュー03
+          %a.button-collapse{"data-target" => "nav-mobile", :href => "#"}
+            %i.mdi-navigation-menu
+    %main
+      = yield

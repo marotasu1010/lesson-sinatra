@@ -1,0 +1,8 @@
+- if !target.nil? && target.length > 0
+  %ul.collection.with-header
+    %li.collection-header
+      %h4
+        = name
+    - target.each do |elm|
+      %li.collection-item
+        = elm.content
