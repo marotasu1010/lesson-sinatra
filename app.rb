@@ -40,6 +40,15 @@ class Server < Sinatra::Base
     todo.save
     redirect '/'
   end
-
+  patch '/update' do
+    @todo = Todo.find(params[:id])
+      if @todo.update
+      redirect '/'
+    end
+  end
+  delete '/destroy' do
+    @todo = Todo.find(params[:id])
+      @todo.destroy
+  end
 end
 

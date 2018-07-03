@@ -1,11 +1,7 @@
-%h2 Todo List
-.left-align
-  .row
-    .col.s12.m6
       .card.blue-grey.darken-1
         .card-content.white-text
           %span.card-title 新しいTODO
-          %p あなたの新しいTODOを登録しよう
+          %p TODOリストの編集
         .card-action
           %form{ :action => "regist", :method => "POST" }
             .input-field
@@ -25,7 +21,6 @@
               %label
                 category:
             %input.waves-effect.waves-light.btn{ type:'submit'}
-            = link_to 'update' edit_todo_path(@todo), .waves-effect waves-light btn-small, :action => "update"
             = link_to 'delete', @todo, method: :delete, :action => "destroy", .waves-effect waves-light btn-small
   .row
     - todo = @todo[1]
